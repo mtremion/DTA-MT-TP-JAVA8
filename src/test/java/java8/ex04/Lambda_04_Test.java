@@ -1,13 +1,14 @@
 package java8.ex04;
 
 
-import java8.data.Data;
-import java8.data.Person;
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import org.junit.Test;
+
+import java8.data.Data;
+import java8.data.Person;
 
 /**
  * Exercice 04 - FuncCollection
@@ -74,15 +75,19 @@ public class Lambda_04_Test {
         List<Person> personList = Data.buildPersonList(100);
         FuncCollection<Person> personFuncCollection = new FuncCollection<>();
         personFuncCollection.addAll(personList);
+        
+        
 
-        personFuncCollection
+        personFuncCollection.filter(p -> p.getAge() > 50).map(p -> p.getCompte());
                 // TODO filtrer, ne garder uniquement que les personnes ayant un age > 50
-                .filter(null)
+                
                 // TODO transformer la liste de personnes en liste de comptes. Un compte a par défaut un solde à 1000.
-                .map(null)
+                
                 // TODO vérifier que chaque compte a un solde à 1000.
                 // TODO vérifier que chaque titulaire de compte a un age > 50
                 .forEach(null);
+        
+        
 
         // TODO à supprimer
         assert false;
